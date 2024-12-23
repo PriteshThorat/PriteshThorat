@@ -3,7 +3,7 @@ I'm Pritesh, a passionate Front-End Developer with a love for web development. I
 
 🔭 I’m currently working on E Commerce Website
 
-🌱 I’m learning JavaScript, C++
+🌱 I’m learning React.js
 
 You can check out some of my cool projects here on GitHub:
 
