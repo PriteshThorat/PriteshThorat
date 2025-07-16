@@ -13,6 +13,7 @@ I'm a passionate Full Stack Developer who enjoys crafting clean, user-friendly i
 - 🔭 **Currently working on:** Social Media Platform (Twitter Clone) with React & Node.js
 - 🌱 **Learning:** Next.js and advanced backend architectures
 - 💬 **Ask me about:** JavaScript, React, Redux, Node.js, MongoDB, Full Stack Development
+- 🌐 **Portfolio:** [Visit My Portfolio](https://portfolio-silk-ten-97.vercel.app)
 - ⚡ **Fun fact:** I love creating robust backend projects and solving complex problems!
 
 ---
