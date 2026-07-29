@@ -40,12 +40,19 @@ def main():
             "No assets/photo.jpg (or .png/.jpeg) found — skipping ASCII portrait "
             "generation. Drop a photo there and re-run this script to build it."
         )
-        return
+    else:
+        processed = ROOT / "assets" / "photo_processed.png"
+        run("preprocess_photo.py", "--input", str(photo), "--output", str(processed))
+        run("ascii_convert.py")
+        run("render_ascii_svg.py")
 
-    processed = ROOT / "assets" / "photo_processed.png"
-    run("preprocess_photo.py", "--input", str(photo), "--output", str(processed))
-    run("ascii_convert.py")
-    run("render_ascii_svg.py")
+    if (ROOT / "data" / "ascii_art.json").exists():
+        run("render_combined_svg.py")
+    else:
+        print(
+            "No data/ascii_art.json yet — skipping the combined synced hero SVG "
+            "(needs the ASCII pipeline to have run at least once)."
+        )
 
 
 if __name__ == "__main__":

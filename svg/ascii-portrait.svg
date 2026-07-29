@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="370" height="251" viewBox="0 0 370 251">
-<defs><filter id="panelShadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000000" flood-opacity="0.45"/></filter></defs>
+<defs><filter id="panelShadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000000" flood-opacity="0.45"/></filter><linearGradient id="scanGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#39d353" stop-opacity="0"/><stop offset="50%" stop-color="#39d353" stop-opacity="0.55"/><stop offset="100%" stop-color="#39d353" stop-opacity="0"/></linearGradient><clipPath id="panelClip"><rect x="1" y="1" width="368" height="249" rx="10"/></clipPath></defs>
 <rect x="1" y="1" width="368" height="249" rx="10" fill="#0d1117" stroke="#30363d" stroke-width="1" filter="url(#panelShadow)"/>
 <clipPath id="clipRow0"><rect x="8" y="17.4" height="4.6" width="0"><animate attributeName="width" from="0" to="201.6" begin="0.000s" dur="0.18s" fill="freeze"/></rect></clipPath>
 <text clip-path="url(#clipRow0)" x="8" y="20.0" font-family="Consolas, 'Courier New', monospace" font-size="4.2" fill="#39d353" xml:space="preserve">                                                                                </text>
@@ -95,4 +95,5 @@
 <text clip-path="url(#clipRow45)" x="8" y="226.18181818181816" font-family="Consolas, 'Courier New', monospace" font-size="4.2" fill="#39d353" xml:space="preserve">            =#***#%%@##*****#####%%%%%=-==-=#%##*%@%%%%%%%%@@%###%%%%%=         </text>
 <line x1="223.6" y1="12" x2="223.6" y2="239" stroke="#30363d" stroke-width="1" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="1.680s" dur="0.3s" fill="freeze"/></line>
 <text x="299.8" y="125.5" text-anchor="middle" dominant-baseline="middle" transform="rotate(-90 299.8 125.5)" font-family="Consolas, 'Courier New', monospace" font-size="15" letter-spacing="3" fill="#39d353" opacity="0">@PriteshThorat<animate attributeName="opacity" from="0" to="1" begin="1.680s" dur="0.4s" fill="freeze"/></text>
+<g clip-path="url(#panelClip)" style="mix-blend-mode:screen"><rect x="1" width="368" height="22" fill="url(#scanGrad)"><animate attributeName="y" from="-21" to="250" begin="0s" dur="1.8s" repeatCount="indefinite" calcMode="linear"/></rect></g>
 </svg>

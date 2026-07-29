@@ -31,8 +31,11 @@ jobs:
       - name: Render heatmap SVG
         run: python scripts/render_heatmap_svg.py
 
+      - name: Render combined synced hero SVG
+        run: python scripts/render_combined_svg.py
+
       - name: Commit and push if changed
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "chore: refresh contribution graph [skip ci]"
-          file_pattern: "data/contributions.json svg/contrib-heatmap.svg"
+          file_pattern: "data/contributions.json svg/contrib-heatmap.svg svg/readme-hero.svg"

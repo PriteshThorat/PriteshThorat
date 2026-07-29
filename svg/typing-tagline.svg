@@ -1,4 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="860" height="40" viewBox="0 0 860 40">
+<defs>
+  <linearGradient id="scanGrad" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#39d353" stop-opacity="0"/>
+    <stop offset="50%" stop-color="#39d353" stop-opacity="0.55"/>
+    <stop offset="100%" stop-color="#39d353" stop-opacity="0"/>
+  </linearGradient>
+</defs>
 <clipPath id="typeClip">
   <rect x="20" y="8" height="24" width="0">
     <animate id="typeAnim" attributeName="width" from="0" to="669.6" begin="0.3s" dur="2.790s" fill="freeze" calcMode="linear"/>
@@ -9,4 +16,9 @@
   <animate attributeName="opacity" from="0" to="1" begin="0.3s" dur="0.01s" fill="freeze"/>
   <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.5;0.5;1;1" dur="1s" begin="typeAnim.end" repeatCount="indefinite"/>
 </rect>
+<g style="mix-blend-mode:screen">
+  <rect x="0" width="860" height="14" fill="url(#scanGrad)">
+    <animate attributeName="y" from="-14" to="40" begin="0s" dur="1.8s" repeatCount="indefinite" calcMode="linear"/>
+  </rect>
+</g>
 </svg>

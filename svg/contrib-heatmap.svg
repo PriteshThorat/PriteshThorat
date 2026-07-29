@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="860" height="178" viewBox="0 0 860 178">
-<defs><filter id="panelShadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000000" flood-opacity="0.45"/></filter></defs>
+<defs><filter id="panelShadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000000" flood-opacity="0.45"/></filter><linearGradient id="scanGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#39d353" stop-opacity="0"/><stop offset="50%" stop-color="#39d353" stop-opacity="0.55"/><stop offset="100%" stop-color="#39d353" stop-opacity="0"/></linearGradient><clipPath id="panelClip"><rect x="1" y="1" width="858" height="176" rx="10"/></clipPath></defs>
 <rect x="1" y="1" width="858" height="176" rx="10" fill="#0d1117" stroke="#30363d" stroke-width="1" filter="url(#panelShadow)"/>
 <text x="20" y="24" font-family="Consolas, 'Courier New', monospace" font-size="13" fill="#39d353">PriteshThorat@github ~ $ ./contributions.sh</text>
 <text x="4" y="78" font-family="Consolas, monospace" font-size="9" fill="#7d8590">Mon</text>
@@ -394,4 +394,5 @@
 <rect x="796" y="161" width="9" height="9" rx="2" fill="#26a641"/>
 <rect x="808" y="161" width="9" height="9" rx="2" fill="#39d353"/>
 <text x="820" y="170" font-family="Consolas, monospace" font-size="10" fill="#7d8590">More</text>
+<g clip-path="url(#panelClip)" style="mix-blend-mode:screen"><rect x="1" width="858" height="28" fill="url(#scanGrad)"><animate attributeName="y" from="-27" to="177" begin="0s" dur="1.8s" repeatCount="indefinite" calcMode="linear"/></rect></g>
 </svg>

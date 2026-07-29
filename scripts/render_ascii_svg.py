@@ -49,9 +49,17 @@ def main():
     parts = [
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{WIDTH}" height="{height}" '
         f'viewBox="0 0 {WIDTH} {height}">',
-        '<defs><filter id="panelShadow" x="-20%" y="-20%" width="140%" height="140%">'
+        '<defs>'
+        '<filter id="panelShadow" x="-20%" y="-20%" width="140%" height="140%">'
         '<feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000000" flood-opacity="0.45"/>'
-        '</filter></defs>',
+        '</filter>'
+        '<linearGradient id="scanGrad" x1="0" y1="0" x2="0" y2="1">'
+        '<stop offset="0%" stop-color="#39d353" stop-opacity="0"/>'
+        '<stop offset="50%" stop-color="#39d353" stop-opacity="0.55"/>'
+        '<stop offset="100%" stop-color="#39d353" stop-opacity="0"/>'
+        '</linearGradient>'
+        f'<clipPath id="panelClip"><rect x="1" y="1" width="{WIDTH - 2}" height="{height - 2}" rx="10"/></clipPath>'
+        '</defs>',
         f'<rect x="1" y="1" width="{WIDTH - 2}" height="{height - 2}" rx="10" '
         f'fill="{BG}" stroke="{PANEL_BORDER}" stroke-width="1" filter="url(#panelShadow)"/>',
     ]
@@ -75,11 +83,12 @@ def main():
             f'fill="{TEXT_COLOR}" xml:space="preserve">{escape(row_text)}</text>'
         )
 
+    rows_end = (len(rows) - 1) * ROW_STAGGER + ROW_DURATION
+
     art_right_edge = SIDE_PADDING + row_full_width
     divider_x = art_right_edge + 14
     if divider_x + 30 < WIDTH - SIDE_PADDING:
-        last_row_begin = (len(rows) - 1) * ROW_STAGGER
-        handle_begin = last_row_begin + ROW_DURATION + 0.15
+        handle_begin = rows_end + 0.15
 
         parts.append(
             f'<line x1="{divider_x:.1f}" y1="{TOP_PADDING - 8}" x2="{divider_x:.1f}" '
@@ -99,6 +108,16 @@ def main():
             f'dur="0.4s" fill="freeze"/>'
             f'</text>'
         )
+
+    scan_height = 22
+    scan_loop_duration = 1.8
+    parts.append(
+        f'<g clip-path="url(#panelClip)" style="mix-blend-mode:screen">'
+        f'<rect x="1" width="{WIDTH - 2}" height="{scan_height}" fill="url(#scanGrad)">'
+        f'<animate attributeName="y" from="{1 - scan_height}" to="{height - 1}" '
+        f'begin="0s" dur="{scan_loop_duration}s" repeatCount="indefinite" calcMode="linear"/>'
+        f'</rect></g>'
+    )
 
     parts.append("</svg>")
 

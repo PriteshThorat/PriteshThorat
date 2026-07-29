@@ -46,9 +46,17 @@ def main():
         f'viewBox="0 0 {width} {height}">'
     )
     parts.append(
-        '<defs><filter id="panelShadow" x="-20%" y="-20%" width="140%" height="140%">'
+        '<defs>'
+        '<filter id="panelShadow" x="-20%" y="-20%" width="140%" height="140%">'
         '<feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000000" flood-opacity="0.45"/>'
-        '</filter></defs>'
+        '</filter>'
+        '<linearGradient id="scanGrad" x1="0" y1="0" x2="0" y2="1">'
+        '<stop offset="0%" stop-color="#39d353" stop-opacity="0"/>'
+        '<stop offset="50%" stop-color="#39d353" stop-opacity="0.55"/>'
+        '<stop offset="100%" stop-color="#39d353" stop-opacity="0"/>'
+        '</linearGradient>'
+        f'<clipPath id="panelClip"><rect x="1" y="1" width="{width - 2}" height="{height - 2}" rx="10"/></clipPath>'
+        '</defs>'
     )
     parts.append(
         f'<rect x="1" y="1" width="{width - 2}" height="{height - 2}" rx="10" '
@@ -136,6 +144,16 @@ def main():
     parts.append(
         f'<text x="{more_x}" y="{footer_y}" font-family="Consolas, monospace" '
         f'font-size="10" fill="#7d8590">More</text>'
+    )
+
+    scan_loop_duration = 1.8
+    scan_height = 28
+    parts.append(
+        f'<g clip-path="url(#panelClip)" style="mix-blend-mode:screen">'
+        f'<rect x="1" width="{width - 2}" height="{scan_height}" fill="url(#scanGrad)">'
+        f'<animate attributeName="y" from="{1 - scan_height}" to="{height - 1}" '
+        f'begin="0s" dur="{scan_loop_duration}s" repeatCount="indefinite" calcMode="linear"/>'
+        f'</rect></g>'
     )
 
     parts.append("</svg>")
