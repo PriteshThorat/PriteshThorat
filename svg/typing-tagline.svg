@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="40" viewBox="0 0 860 40">
+<clipPath id="typeClip">
+  <rect x="20" y="8" height="24" width="0">
+    <animate id="typeAnim" attributeName="width" from="0" to="669.6" begin="0.3s" dur="2.790s" fill="freeze" calcMode="linear"/>
+  </rect>
+</clipPath>
+<text clip-path="url(#typeClip)" x="20" y="26" font-family="Consolas, 'Courier New', monospace" font-size="18" fill="#39d353" xml:space="preserve">$ Full Stack Developer · MERN Stack Enthusiast · Backend Lover</text>
+<rect x="691.6" y="10" width="9.0" height="18" fill="#39d353" opacity="0">
+  <animate attributeName="opacity" from="0" to="1" begin="0.3s" dur="0.01s" fill="freeze"/>
+  <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.5;0.5;1;1" dur="1s" begin="typeAnim.end" repeatCount="indefinite"/>
+</rect>
+</svg>

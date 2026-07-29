@@ -1,36 +1,35 @@
-<h1 align="center">Hi there 👋, I'm Pritesh Thorat</h1>
+<p align="center"><code>pritesh@github ~ $ whoami</code></p>
+<h3 align="center">Pritesh Thorat — Full Stack Developer</h3>
 
 <p align="center">
-  🚀 Full Stack Developer | 💻 MERN Stack Enthusiast | 🔥 Backend Lover
+  <img src="./svg/typing-tagline.svg" alt="tagline" width="700" />
 </p>
 
----
+<p align="center">
+  <a href="https://priteshthorat.vercel.app/"><img src="https://img.shields.io/badge/Portfolio-39d353?style=for-the-badge&logo=vercel&logoColor=0d1117&labelColor=0d1117" alt="Portfolio" /></a>
+</p>
 
-## 🔥 About Me
+<p align="center"><code>pritesh@github ~ $ ./contributions.sh</code></p>
+<p align="center">
+  <img src="./svg/contrib-heatmap.svg" alt="Contribution heatmap" width="860" />
+</p>
 
-I'm a passionate Full Stack Developer who enjoys crafting clean, user-friendly interfaces and building meaningful web applications. I'm always learning, experimenting, and looking for ways to improve my craft.
+<p align="center"><code>pritesh@github ~ $ ./stats.sh</code></p>
+<p align="center">
+  <img src="https://github-stats-extended.vercel.app/api?username=PriteshThorat&show_icons=true&include_all_commits=true&hide_border=false&bg_color=0d1117&title_color=39d353&text_color=c9d1d9&icon_color=39d353&border_color=30363d" alt="GitHub stats" height="195" />
+  <img src="https://github-stats-extended.vercel.app/api/top-langs?username=PriteshThorat&layout=compact&hide_border=false&bg_color=0d1117&title_color=39d353&text_color=c9d1d9&border_color=30363d" alt="Top languages" height="195" />
+</p>
 
-- 🔭 **Currently working on:** Social Media Platform (Twitter Clone) with React & Node.js
-- 🌱 **Learning:** Next.js and advanced backend architectures
-- 💬 **Ask me about:** JavaScript, React, Redux, Node.js, MongoDB, Full Stack Development
-- 🌐 **Portfolio:** [Visit My Portfolio](https://priteshthorat.vercel.app/)
-- ⚡ **Fun fact:** I love creating robust backend projects and solving complex problems!
+<br>
 
----
-
-## 🛠 Tech Stack
-
-**Frontend:**  
-![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![Redux](https://img.shields.io/badge/-Redux-764ABC?style=for-the-badge&logo=redux&logoColor=white)
-![Next.js](https://img.shields.io/badge/-Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white)
-
-**Backend:**  
-![Node.js](https://img.shields.io/badge/-Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
-![Express.js](https://img.shields.io/badge/-Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
-![MongoDB](https://img.shields.io/badge/-MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
-
-**Tools:**  
-![Git](https://img.shields.io/badge/-Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+<p align="center"><code>pritesh@github ~ $ ./whoami.sh</code></p>
+<table align="center">
+  <tr>
+    <td width="370" valign="top">
+      <img src="./svg/ascii-portrait.svg" alt="ASCII portrait" width="370" />
+    </td>
+    <td width="490" valign="top">
+      <img src="./svg/info-card.svg" alt="neofetch-style info card" width="490" />
+    </td>
+  </tr>
+</table>

@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+venv/
+.venv/
+assets/photo.jpg
+assets/photo.jpeg
+assets/photo.png
+assets/photo_processed.png
