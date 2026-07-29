@@ -14,7 +14,11 @@ OUTPUT_PATH = ROOT / "svg" / "ascii-portrait.svg"
 
 WIDTH = 370
 CHAR_WIDTH = 4.2
-ROW_HEIGHT = 7
+# Must match CHAR_ASPECT_CORRECTION in preprocess_photo.py — that script sizes
+# the ascii grid's row count assuming rows are drawn at char_width / this
+# ratio tall. If the two drift apart the portrait renders stretched/squashed
+# relative to the source photo.
+CHAR_ASPECT_CORRECTION = 0.55
 TOP_PADDING = 20
 SIDE_PADDING = 8
 ROW_STAGGER = 0.03
@@ -23,6 +27,9 @@ ROW_DURATION = 0.18
 TEXT_COLOR = "#39d353"
 BG = "#0d1117"
 PANEL_BORDER = "#30363d"
+DIM = "#7d8590"
+
+HANDLE_TEXT = "@PriteshThorat"
 
 
 def main():
@@ -34,8 +41,10 @@ def main():
     cols = len(rows[0])
     font_size = max(3, min(CHAR_WIDTH, (WIDTH - 2 * SIDE_PADDING) / (cols * 0.6)))
     row_full_width = cols * font_size * 0.6
+    char_width = font_size * 0.6
+    row_height = char_width / CHAR_ASPECT_CORRECTION
 
-    height = TOP_PADDING * 2 + len(rows) * ROW_HEIGHT
+    height = round(TOP_PADDING * 2 + len(rows) * row_height)
 
     parts = [
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{WIDTH}" height="{height}" '
@@ -48,13 +57,13 @@ def main():
     ]
 
     for row_index, row_text in enumerate(rows):
-        y = TOP_PADDING + row_index * ROW_HEIGHT
+        y = TOP_PADDING + row_index * row_height
         clip_id = f"clipRow{row_index}"
         begin = row_index * ROW_STAGGER
 
         parts.append(
             f'<clipPath id="{clip_id}">'
-            f'<rect x="{SIDE_PADDING}" y="{y - ROW_HEIGHT + 2}" height="{ROW_HEIGHT}" width="0">'
+            f'<rect x="{SIDE_PADDING}" y="{y - row_height + 2:.1f}" height="{row_height:.1f}" width="0">'
             f'<animate attributeName="width" from="0" to="{row_full_width:.1f}" '
             f'begin="{begin:.3f}s" dur="{ROW_DURATION}s" fill="freeze"/>'
             f'</rect>'
@@ -64,6 +73,31 @@ def main():
             f'<text clip-path="url(#{clip_id})" x="{SIDE_PADDING}" y="{y}" '
             f'font-family="Consolas, \'Courier New\', monospace" font-size="{font_size:.1f}" '
             f'fill="{TEXT_COLOR}" xml:space="preserve">{escape(row_text)}</text>'
+        )
+
+    art_right_edge = SIDE_PADDING + row_full_width
+    divider_x = art_right_edge + 14
+    if divider_x + 30 < WIDTH - SIDE_PADDING:
+        last_row_begin = (len(rows) - 1) * ROW_STAGGER
+        handle_begin = last_row_begin + ROW_DURATION + 0.15
+
+        parts.append(
+            f'<line x1="{divider_x:.1f}" y1="{TOP_PADDING - 8}" x2="{divider_x:.1f}" '
+            f'y2="{height - 12}" stroke="{PANEL_BORDER}" stroke-width="1" opacity="0">'
+            f'<animate attributeName="opacity" from="0" to="1" begin="{handle_begin:.3f}s" '
+            f'dur="0.3s" fill="freeze"/></line>'
+        )
+
+        text_cx = (divider_x + 14 + WIDTH - SIDE_PADDING) / 2
+        text_cy = height / 2
+        parts.append(
+            f'<text x="{text_cx:.1f}" y="{text_cy:.1f}" text-anchor="middle" '
+            f'dominant-baseline="middle" transform="rotate(-90 {text_cx:.1f} {text_cy:.1f})" '
+            f'font-family="Consolas, \'Courier New\', monospace" font-size="15" '
+            f'letter-spacing="3" fill="{TEXT_COLOR}" opacity="0">{escape(HANDLE_TEXT)}'
+            f'<animate attributeName="opacity" from="0" to="1" begin="{handle_begin:.3f}s" '
+            f'dur="0.4s" fill="freeze"/>'
+            f'</text>'
         )
 
     parts.append("</svg>")
