@@ -1,45 +1,8 @@
 {
   "username": "PriteshThorat",
-  "generated_at": "2026-08-01T08:35:13Z",
-  "total_contributions": 730,
+  "generated_at": "2026-08-02T08:38:26Z",
+  "total_contributions": 732,
   "weeks": [
-    [
-      {
-        "date": "2025-07-27",
-        "level": 0,
-        "count": 0
-      },
-      {
-        "date": "2025-07-28",
-        "level": 0,
-        "count": 0
-      },
-      {
-        "date": "2025-07-29",
-        "level": 0,
-        "count": 0
-      },
-      {
-        "date": "2025-07-30",
-        "level": 1,
-        "count": 7
-      },
-      {
-        "date": "2025-07-31",
-        "level": 1,
-        "count": 6
-      },
-      {
-        "date": "2025-08-01",
-        "level": 1,
-        "count": 2
-      },
-      {
-        "date": "2025-08-02",
-        "level": 1,
-        "count": 1
-      }
-    ],
     [
       {
         "date": "2025-08-03",
@@ -1955,14 +1918,27 @@
       },
       {
         "date": "2026-07-31",
-        "level": 1,
-        "count": 2
+        "level": 3,
+        "count": 19
       },
       {
         "date": "2026-08-01",
+        "level": 1,
+        "count": 1
+      }
+    ],
+    [
+      {
+        "date": "2026-08-02",
         "level": 0,
         "count": 0
-      }
+      },
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
     ]
   ]
 }
